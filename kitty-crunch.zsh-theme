@@ -28,8 +28,8 @@ CRUNCH_SPACER_COLOR="%{$fg[black]%}"
 # These Git variables are used by the oh-my-zsh git_prompt_info helper:
 ZSH_THEME_GIT_PROMPT_PREFIX="$CRUNCH_BRACKET_COLOR:$CRUNCH_GIT_BRANCH_COLOR"
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_CLEAN=" 😻 "
-ZSH_THEME_GIT_PROMPT_DIRTY=" 🙀 "
+ZSH_THEME_GIT_PROMPT_CLEAN=" 😻"
+ZSH_THEME_GIT_PROMPT_DIRTY=" 🙀"
 
 # Our elements:
 if [ -e ~/.rvm/bin/rvm-prompt ]; then
@@ -46,16 +46,12 @@ function check_if_git() {
         echo ""
     else
         git rev-parse --git-dir 2> /dev/null;
-        echo " 😺 "
+        echo " 😺"
     fi
 }
 
 CRUNCH_DIR_="$CRUNCH_DIR_COLOR%~\$(git_prompt_info)"
 CRUNCH_PROMPT="\$(check_if_git) $CRUNCH_CARET_COLOR❯ "
-CRUNCH_SPACER="
-$CRUNCH_SPACER_COLOR================================================
-
-"
 
 # Put it all together!
 PROMPT="$CRUNCH_SPACER$CRUNCH_RVM_ $CRUNCH_DIR_$CRUNCH_PROMPT%{$reset_color%}"
